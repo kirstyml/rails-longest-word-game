@@ -1,0 +1,14 @@
+<!-- <h1>Games#score</h1>
+<p>Find me in app/views/games/score.html.erb</p> -->
+
+<div class="container">
+  <h1>Results</h1>
+  <% if @valid && @english %>
+    <p>Congratulations! <strong><%= "#{@attempt.upcase}" %></strong> is a valid English word!</p>
+  <% elsif @valid && !@english %>
+    <p><%= "Sorry but #{@attempt.upcase} does not seem to be a valid English word..." %></p>
+  <% else %>
+    <p><%= "Sorry but #{@attempt.upcase} can't be built out of #{params[:letters_board]}" %></p>
+  <% end %>
+  <%= link_to "Play again", new_path %>
+</div>
